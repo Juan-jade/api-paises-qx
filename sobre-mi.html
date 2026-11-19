@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sobre mí | Atlas</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { ink: '#12293A', sea: '#1E6C8A', mist: '#EAF1F4', sol: '#F2B705' },
+          fontFamily: {
+            display: ['"Bricolage Grotesque"', 'sans-serif'],
+            sans: ['"Public Sans"', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex min-h-screen flex-col bg-mist font-sans text-ink antialiased">
+
+  <header id="site-header" class="sticky top-0 z-30 border-b border-ink/10 bg-white/90 backdrop-blur"></header>
+
+  <main id="perfil" class="mx-auto grid w-full max-w-5xl flex-1 gap-8 px-4 py-12 md:grid-cols-3 md:py-16"></main>
+
+  <footer id="site-footer" class="bg-ink py-6 text-center text-sm text-white/80"></footer>
+
+  <script type="module" src="sobre-mi.js"></script>
+</body>
+</html>
