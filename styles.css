@@ -1,0 +1,39 @@
+/* Detalles propios que complementan a Tailwind */
+
+html { scroll-behavior: smooth; scroll-padding-top: 4.5rem; }
+
+:focus-visible { outline: 3px solid #F2B705; outline-offset: 2px; }
+
+/* Tarjetas */
+.card { transition: transform .2s ease, box-shadow .2s ease; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(18, 41, 58, .18); }
+
+/* Esqueletos de carga */
+.skeleton {
+  background: linear-gradient(90deg, #dbe5ea 25%, #eef3f5 50%, #dbe5ea 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite linear;
+}
+@keyframes shimmer { to { background-position: -200% 0; } }
+
+/* Ventana de detalle */
+dialog[open] { animation: dialog-in .25s ease-out; }
+dialog[open]::backdrop { animation: fade-in .25s ease-out; }
+@keyframes dialog-in { from { opacity: 0; transform: translateY(16px) scale(.98); } }
+@keyframes fade-in { from { opacity: 0; } }
+
+/* Alertas */
+.alert-enter { animation: alert-in .25s ease-out; }
+.alert-leave { opacity: 0; transform: translateX(16px); transition: opacity .25s, transform .25s; }
+@keyframes alert-in { from { opacity: 0; transform: translateX(16px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Reto de 50 clics */
+.clic-btn { transition: transform .08s ease, background-color .2s ease; }
+.clic-btn:active:not(:disabled) { transform: scale(.94); }
+.reveal { animation: reveal-in .5s ease-out; }
+@keyframes reveal-in { from { opacity: 0; transform: translateY(12px); } }
